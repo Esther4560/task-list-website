@@ -73,20 +73,30 @@ The user should be able to see the list of tasks, add new ones, delete existing 
       ullist.appendChild(liList)
       liList.classList.add("listBackground")
       liList.classList.add("listFormat")
-  
-      
-      
+     }
+
+        function removeLast(){
+          let list=document.getElementById("myTakList")
+          let tasks=list.getElementsByTagName("li")
+          let i = tasks.length
+          list.removeChild(list.children[i]);
+        }
+
+      function removeFirst(){
+        let list = document.getElementById("myTaskList")
+        list.removeChild(list.firstChild);
       }
-
-         
-
-      /* EXERCISE 6: 
-                Create a method "removeLast" which removes the last item from the task list
-            */
-
-      /* EXERCISE 7: 
-                Create a method "removeFirst" which removes the first item from the task list
-            */
+       
+      function getTasksAsArray(){
+        let x= []
+        let list = document.getElementById("myTaskList")
+        let tasks= list.getElementsByTagName("li")
+        for(i=0; i<tasks.length; i++){
+          x.push(tasks[i].innerText)
+        }
+        console.log(x)
+        
+      }
 
       /* EXERCISE 8: 
                Create a method "getTasksAsArray" which returns, and prints to the console an array containing the tasks as strings
